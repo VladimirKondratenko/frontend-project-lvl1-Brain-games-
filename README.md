@@ -5,6 +5,6 @@
 <h2>Brain-even</h2>
 <script id="asciicast-QAWKv9c8X5Q6DdLWzhcza64J6" src="https://asciinema.org/a/QAWKv9c8X5Q6DdLWzhcza64J6.js" async></script>
 <h2>Brain-calc</h2>
-<script id="asciicast-b3Zt8vcjwOXzCm1X0ldic9e99" src="https://asciinema.org/a/b3Zt8vcjwOXzCm1X0ldic9e99.js" async></script>
+[![asciicast](https://asciinema.org/a/b3Zt8vcjwOXzCm1X0ldic9e99.svg)](https://asciinema.org/a/b3Zt8vcjwOXzCm1X0ldic9e99)
 <h2>Brain-progression</h2>
 <script id="asciicast-QAWKv9c8X5Q6DdLWzhcza64J6" src="https://asciinema.org/a/QAWKv9c8X5Q6DdLWzhcza64J6.js" async></script>
