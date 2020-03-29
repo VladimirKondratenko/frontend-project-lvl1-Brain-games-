@@ -8,17 +8,19 @@ const getArithmeticProgression = () => {
   for (let i = 0; i < 3; i += 1) {
     let startNumberProgression = Math.floor(Math.random() * Math.floor(100));
     const numberChangeProgression = Math.floor(Math.random() * Math.floor(100));
+    const indexProgression = Math.floor(Math.random() * Math.floor(10));
     const resultArithmeticProgression = [];
-    const rightAnswer = numberChangeProgression;
+    let rightAnswer = 0;
 
     for (let count = 1; count < 10; count += 1) {
       startNumberProgression += numberChangeProgression;
       resultArithmeticProgression.push(startNumberProgression);
-      // console.log(`${startNumberProgression} start progression`);
-      // console.log(`${numberChangeProgression} numberchangeprogression`);
-      // console.log(resultArithmeticProgression + 'TEST');
     }
-    console.log(`Question: ${resultArithmeticProgression}`);
+
+    rightAnswer = resultArithmeticProgression[indexProgression];
+    resultArithmeticProgression[indexProgression] = '..';
+
+    console.log(`Question: ${resultArithmeticProgression.join(' ')}`);
     const answer = readlineSync.question('Your answer: ');
     if (rightAnswer === parseInt(answer, 10)) {
       console.log('Correct!');
