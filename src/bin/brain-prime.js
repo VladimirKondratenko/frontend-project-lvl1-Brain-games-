@@ -2,27 +2,32 @@
 import readlineSync from 'readline-sync';
 import getUserName from '..';
 
-const getArithmeticProgression = () => {
+const checkPrimeNumber = () => {
   const userName = getUserName();
-  console.log('What number is missing in the progression?');
+  const returnRightAnser = (text) => {
+    for (let count = 2; count < text; count += 1) {
+      if (text % count === 0) {
+        return 'no';
+      }
+    }
+    return 'yes';
+  };
+  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
   for (let i = 0; i < 3; i += 1) {
-    let startNumberProgression = Math.floor(Math.random() * Math.floor(100));
-    const numberChangeProgression = Math.floor(Math.random() * Math.floor(100));
-    const indexProgression = Math.floor(Math.random() * Math.floor(10));
-    const resultArithmeticProgression = [];
-    let rightAnswer = 0;
+    const randomNumber = Math.floor(Math.random() * Math.floor(100));
+    console.log(`Question: ${randomNumber}`);
+    let rightAnswer;
 
-    for (let count = 1; count < 10; count += 1) {
-      startNumberProgression += numberChangeProgression;
-      resultArithmeticProgression.push(startNumberProgression);
+    if (randomNumber <= 1) {
+      rightAnswer = 'no';
+    } else if (randomNumber === 2) {
+      rightAnswer = 'yes';
+    } else {
+      rightAnswer = returnRightAnser(randomNumber);
     }
 
-    rightAnswer = resultArithmeticProgression[indexProgression];
-    resultArithmeticProgression[indexProgression] = '..';
-
-    console.log(`Question: ${resultArithmeticProgression.join(' ')}`);
     const answer = readlineSync.question('Your answer: ');
-    if (rightAnswer === parseInt(answer, 10)) {
+    if (rightAnswer === answer) {
       console.log('Correct!');
     } else {
       console.log(`"${answer}" is wrong answer ;(. Correct answer was "${rightAnswer}".`);
@@ -33,4 +38,4 @@ const getArithmeticProgression = () => {
   console.log(`Congratulations, ${userName}!`);
 };
 
-getArithmeticProgression();
+checkPrimeNumber();
