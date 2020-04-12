@@ -1,7 +1,6 @@
 # frontend-project-lvl1
 <a href="https://codeclimate.com/github/VladimirKondratenko/frontend-project-lvl1/maintainability"><img src="https://api.codeclimate.com/v1/badges/961a20113da3b266e1c7/maintainability" /></a>
-<a href="https://github.com/VladimirKondratenko/frontend-project-lvl1/actions"></a>
-<a href="https://github.com/VladimirKondratenko/frontend-project-lvl1/workflows/CI/badge.svg"></a><img src="https://github.com/VladimirKondratenko/frontend-project-lvl1/workflows/frontend-project-lvl1/badge.svg>
+<a href="https://github.com/VladimirKondratenko/frontend-project-lvl1/actions"><img src="https://github.com/VladimirKondratenko/frontend-project-lvl1/workflows/make%20lint/badge.svg?branch=master"></a>
 <h2>Brain-even</h2>
 <a href="https://asciinema.org/a/o0uYxjLoMYOFf2ggoIFheMF7k" target="_blank"><img src="https://asciinema.org/a/o0uYxjLoMYOFf2ggoIFheMF7k.svg" /></a>
 <h2>Brain-calc</h2>
