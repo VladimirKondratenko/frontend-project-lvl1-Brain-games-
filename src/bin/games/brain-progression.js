@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
-import getUserName from '..';
+import getUserName from '../../index';
 
 const getArithmeticProgression = () => {
   const userName = getUserName();
