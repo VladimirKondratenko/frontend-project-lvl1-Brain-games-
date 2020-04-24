@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
-import getUserName from '../../index';
+import getUserName from '../bin/brain-games';
 
 const checkEvenNumber = () => {
   const userName = getUserName();
@@ -21,4 +21,4 @@ const checkEvenNumber = () => {
   console.log(`Congratulations, ${userName}!`);
 };
 
-checkEvenNumber();
+export default checkEvenNumber;

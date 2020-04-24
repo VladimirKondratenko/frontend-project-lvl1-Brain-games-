@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
-import getUserName from '../../index';
+import getUserName from '../bin/brain-games';
 
 const checkPrimeNumber = () => {
   const userName = getUserName();
@@ -38,4 +38,4 @@ const checkPrimeNumber = () => {
   console.log(`Congratulations, ${userName}!`);
 };
 
-checkPrimeNumber();
+export default checkPrimeNumber;

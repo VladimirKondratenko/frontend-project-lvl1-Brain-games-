@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
-import getUserName from '../games/brain-games';
+import getUserName from './games';
 
 const calculatorGame = () => {
   const userName = getUserName();
@@ -37,4 +37,4 @@ const calculatorGame = () => {
   console.log(`Congratulations, ${userName}!`);
 };
 
-calculatorGame();
+export default calculatorGame;

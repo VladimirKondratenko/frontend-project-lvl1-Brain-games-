@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
-import getUserName from '../index';
+import getUserName from '../bin/brain-games';
 
 const getArithmeticProgression = () => {
   const userName = getUserName();
@@ -33,4 +33,4 @@ const getArithmeticProgression = () => {
   console.log(`Congratulations, ${userName}!`);
 };
 
-getArithmeticProgression();
+export default getArithmeticProgression;

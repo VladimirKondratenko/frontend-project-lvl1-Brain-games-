@@ -1,3 +1,3 @@
-import calculatorGame from '../games/brain-calc';
+import calculatorGame from '../games/brainCalc';
 
 calculatorGame();
