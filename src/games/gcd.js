@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
-import getUserName from '../bin/brain-games';
+import getUserName from '../games/games';
 
 const greatestCommonDivisorGame = () => {
   const userName = getUserName();

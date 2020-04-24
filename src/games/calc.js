@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
-import getUserName from './games';
+import getUserName from '../games/games';
 
 const calculatorGame = () => {
   const userName = getUserName();
