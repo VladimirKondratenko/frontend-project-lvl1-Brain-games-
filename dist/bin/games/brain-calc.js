@@ -1,0 +1,55 @@
+#!/usr/bin/env node
+"use strict";
+
+var _readlineSync = _interopRequireDefault(require("readline-sync"));
+
+var _ = _interopRequireDefault(require(".."));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+const calculatorGame = () => {
+  const userName = (0, _.default)();
+  console.log('What is the result of the expression?');
+
+  for (let i = 0; i < 3; i += 1) {
+    const symbolsArr = ['+', '-', '*'];
+    const randomNumberOne = Math.floor(Math.random() * Math.floor(100));
+    const randomNumberTwo = Math.floor(Math.random() * Math.floor(100));
+    const symbolIndex = Math.floor(Math.random() * Math.floor(3));
+    let rightAnswer;
+
+    switch (symbolsArr[symbolIndex]) {
+      case '+':
+        rightAnswer = randomNumberOne + randomNumberTwo;
+        break;
+
+      case '-':
+        rightAnswer = randomNumberOne - randomNumberTwo;
+        break;
+
+      case '*':
+        rightAnswer = randomNumberOne * randomNumberTwo;
+        break;
+
+      default:
+        break;
+    }
+
+    console.log(`Question: ${randomNumberOne} ${symbolsArr[symbolIndex]} ${randomNumberTwo}`);
+
+    const answer = _readlineSync.default.question('Your answer: ');
+
+    if (rightAnswer === parseInt(answer, 10)) {
+      console.log('Correct!');
+    } else {
+      console.log(`"${answer}" is wrong answer ;(. Correct answer was "${rightAnswer}".`);
+      console.log(`Let's try again, ${userName}!`);
+      return;
+    }
+  }
+
+  console.log(`Congratulations, ${userName}!`);
+};
+
+calculatorGame();
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uL3NyYy9iaW4vZ2FtZXMvYnJhaW4tY2FsYy5qcyJdLCJuYW1lcyI6WyJjYWxjdWxhdG9yR2FtZSIsInVzZXJOYW1lIiwiY29uc29sZSIsImxvZyIsImkiLCJzeW1ib2xzQXJyIiwicmFuZG9tTnVtYmVyT25lIiwiTWF0aCIsImZsb29yIiwicmFuZG9tIiwicmFuZG9tTnVtYmVyVHdvIiwic3ltYm9sSW5kZXgiLCJyaWdodEFuc3dlciIsImFuc3dlciIsInJlYWRsaW5lU3luYyIsInF1ZXN0aW9uIiwicGFyc2VJbnQiXSwibWFwcGluZ3MiOiJBQUFBOzs7QUFDQTs7QUFDQTs7OztBQUVBLE1BQU1BLGNBQWMsR0FBRyxNQUFNO0FBQzNCLFFBQU1DLFFBQVEsR0FBRyxnQkFBakI7QUFDQUMsRUFBQUEsT0FBTyxDQUFDQyxHQUFSLENBQVksdUNBQVo7O0FBQ0EsT0FBSyxJQUFJQyxDQUFDLEdBQUcsQ0FBYixFQUFnQkEsQ0FBQyxHQUFHLENBQXBCLEVBQXVCQSxDQUFDLElBQUksQ0FBNUIsRUFBK0I7QUFDN0IsVUFBTUMsVUFBVSxHQUFHLENBQUMsR0FBRCxFQUFNLEdBQU4sRUFBVyxHQUFYLENBQW5CO0FBQ0EsVUFBTUMsZUFBZSxHQUFHQyxJQUFJLENBQUNDLEtBQUwsQ0FBV0QsSUFBSSxDQUFDRSxNQUFMLEtBQWdCRixJQUFJLENBQUNDLEtBQUwsQ0FBVyxHQUFYLENBQTNCLENBQXhCO0FBQ0EsVUFBTUUsZUFBZSxHQUFHSCxJQUFJLENBQUNDLEtBQUwsQ0FBV0QsSUFBSSxDQUFDRSxNQUFMLEtBQWdCRixJQUFJLENBQUNDLEtBQUwsQ0FBVyxHQUFYLENBQTNCLENBQXhCO0FBQ0EsVUFBTUcsV0FBVyxHQUFHSixJQUFJLENBQUNDLEtBQUwsQ0FBV0QsSUFBSSxDQUFDRSxNQUFMLEtBQWdCRixJQUFJLENBQUNDLEtBQUwsQ0FBVyxDQUFYLENBQTNCLENBQXBCO0FBQ0EsUUFBSUksV0FBSjs7QUFDQSxZQUFRUCxVQUFVLENBQUNNLFdBQUQsQ0FBbEI7QUFDRSxXQUFLLEdBQUw7QUFDRUMsUUFBQUEsV0FBVyxHQUFHTixlQUFlLEdBQUdJLGVBQWhDO0FBQ0E7O0FBQ0YsV0FBSyxHQUFMO0FBQ0VFLFFBQUFBLFdBQVcsR0FBR04sZUFBZSxHQUFHSSxlQUFoQztBQUNBOztBQUNGLFdBQUssR0FBTDtBQUNFRSxRQUFBQSxXQUFXLEdBQUdOLGVBQWUsR0FBR0ksZUFBaEM7QUFDQTs7QUFDRjtBQUNFO0FBWEo7O0FBYUFSLElBQUFBLE9BQU8sQ0FBQ0MsR0FBUixDQUFhLGFBQVlHLGVBQWdCLElBQUdELFVBQVUsQ0FBQ00sV0FBRCxDQUFjLElBQUdELGVBQWdCLEVBQXZGOztBQUNBLFVBQU1HLE1BQU0sR0FBR0Msc0JBQWFDLFFBQWIsQ0FBc0IsZUFBdEIsQ0FBZjs7QUFDQSxRQUFJSCxXQUFXLEtBQUtJLFFBQVEsQ0FBQ0gsTUFBRCxFQUFTLEVBQVQsQ0FBNUIsRUFBMEM7QUFDeENYLE1BQUFBLE9BQU8sQ0FBQ0MsR0FBUixDQUFZLFVBQVo7QUFDRCxLQUZELE1BRU87QUFDTEQsTUFBQUEsT0FBTyxDQUFDQyxHQUFSLENBQWEsSUFBR1UsTUFBTyw2Q0FBNENELFdBQVksSUFBL0U7QUFDQVYsTUFBQUEsT0FBTyxDQUFDQyxHQUFSLENBQWEsb0JBQW1CRixRQUFTLEdBQXpDO0FBQ0E7QUFDRDtBQUNGOztBQUNEQyxFQUFBQSxPQUFPLENBQUNDLEdBQVIsQ0FBYSxvQkFBbUJGLFFBQVMsR0FBekM7QUFDRCxDQWpDRDs7QUFtQ0FELGNBQWMiLCJzb3VyY2VzQ29udGVudCI6WyIjIS91c3IvYmluL2VudiBub2RlXG5pbXBvcnQgcmVhZGxpbmVTeW5jIGZyb20gJ3JlYWRsaW5lLXN5bmMnO1xuaW1wb3J0IGdldFVzZXJOYW1lIGZyb20gJy4uJztcblxuY29uc3QgY2FsY3VsYXRvckdhbWUgPSAoKSA9PiB7XG4gIGNvbnN0IHVzZXJOYW1lID0gZ2V0VXNlck5hbWUoKTtcbiAgY29uc29sZS5sb2coJ1doYXQgaXMgdGhlIHJlc3VsdCBvZiB0aGUgZXhwcmVzc2lvbj8nKTtcbiAgZm9yIChsZXQgaSA9IDA7IGkgPCAzOyBpICs9IDEpIHtcbiAgICBjb25zdCBzeW1ib2xzQXJyID0gWycrJywgJy0nLCAnKiddO1xuICAgIGNvbnN0IHJhbmRvbU51bWJlck9uZSA9IE1hdGguZmxvb3IoTWF0aC5yYW5kb20oKSAqIE1hdGguZmxvb3IoMTAwKSk7XG4gICAgY29uc3QgcmFuZG9tTnVtYmVyVHdvID0gTWF0aC5mbG9vcihNYXRoLnJhbmRvbSgpICogTWF0aC5mbG9vcigxMDApKTtcbiAgICBjb25zdCBzeW1ib2xJbmRleCA9IE1hdGguZmxvb3IoTWF0aC5yYW5kb20oKSAqIE1hdGguZmxvb3IoMykpO1xuICAgIGxldCByaWdodEFuc3dlcjtcbiAgICBzd2l0Y2ggKHN5bWJvbHNBcnJbc3ltYm9sSW5kZXhdKSB7XG4gICAgICBjYXNlICcrJzpcbiAgICAgICAgcmlnaHRBbnN3ZXIgPSByYW5kb21OdW1iZXJPbmUgKyByYW5kb21OdW1iZXJUd287XG4gICAgICAgIGJyZWFrO1xuICAgICAgY2FzZSAnLSc6XG4gICAgICAgIHJpZ2h0QW5zd2VyID0gcmFuZG9tTnVtYmVyT25lIC0gcmFuZG9tTnVtYmVyVHdvO1xuICAgICAgICBicmVhaztcbiAgICAgIGNhc2UgJyonOlxuICAgICAgICByaWdodEFuc3dlciA9IHJhbmRvbU51bWJlck9uZSAqIHJhbmRvbU51bWJlclR3bztcbiAgICAgICAgYnJlYWs7XG4gICAgICBkZWZhdWx0OlxuICAgICAgICBicmVhaztcbiAgICB9XG4gICAgY29uc29sZS5sb2coYFF1ZXN0aW9uOiAke3JhbmRvbU51bWJlck9uZX0gJHtzeW1ib2xzQXJyW3N5bWJvbEluZGV4XX0gJHtyYW5kb21OdW1iZXJUd299YCk7XG4gICAgY29uc3QgYW5zd2VyID0gcmVhZGxpbmVTeW5jLnF1ZXN0aW9uKCdZb3VyIGFuc3dlcjogJyk7XG4gICAgaWYgKHJpZ2h0QW5zd2VyID09PSBwYXJzZUludChhbnN3ZXIsIDEwKSkge1xuICAgICAgY29uc29sZS5sb2coJ0NvcnJlY3QhJyk7XG4gICAgfSBlbHNlIHtcbiAgICAgIGNvbnNvbGUubG9nKGBcIiR7YW5zd2VyfVwiIGlzIHdyb25nIGFuc3dlciA7KC4gQ29ycmVjdCBhbnN3ZXIgd2FzIFwiJHtyaWdodEFuc3dlcn1cIi5gKTtcbiAgICAgIGNvbnNvbGUubG9nKGBMZXQncyB0cnkgYWdhaW4sICR7dXNlck5hbWV9IWApO1xuICAgICAgcmV0dXJuO1xuICAgIH1cbiAgfVxuICBjb25zb2xlLmxvZyhgQ29uZ3JhdHVsYXRpb25zLCAke3VzZXJOYW1lfSFgKTtcbn07XG5cbmNhbGN1bGF0b3JHYW1lKCk7XG4iXX0=
