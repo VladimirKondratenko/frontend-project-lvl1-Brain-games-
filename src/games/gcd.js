@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import getUserName from '../games/games';
+import getUserName from './games';
 
 const greatestCommonDivisorGame = () => {
   const userName = getUserName();
