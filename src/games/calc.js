@@ -1,7 +1,7 @@
 import generateRandomNumber from '../utils';
 import engine from '../index';
 
-const calculatorGame = () => {
+const startCalculatorGame = () => {
   const gameName = 'brain-calc';
   console.log('What is the result of the expression?');
   const symbolsArr = ['+', '-', '*'];
@@ -26,4 +26,4 @@ const calculatorGame = () => {
   engine(gameName, gameQuestion, rightAnswer);
 };
 
-export default calculatorGame;
+export default startCalculatorGame;

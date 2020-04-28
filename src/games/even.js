@@ -2,7 +2,7 @@ import readlineSync from 'readline-sync';
 import getUserName from './games';
 import generateRandomNumber from '../utils';
 
-const checkEvenNumber = () => {
+const startCheckEvenNumber = () => {
   const userName = getUserName();
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
   for (let i = 0; i < 3; i += 1) {
@@ -21,4 +21,4 @@ const checkEvenNumber = () => {
   console.log(`Congratulations, ${userName}!`);
 };
 
-export default checkEvenNumber;
+export default startCheckEvenNumber;

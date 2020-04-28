@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import checkEvenNumber from '../games/even';
+import startCheckEvenNumber from '../games/even';
 
-checkEvenNumber();
+startCheckEvenNumber();

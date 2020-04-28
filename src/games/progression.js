@@ -2,7 +2,7 @@ import readlineSync from 'readline-sync';
 import getUserName from './games';
 import generateRandomNumber from '../utils';
 
-const getArithmeticProgression = () => {
+const startArithmeticProgression = () => {
   const userName = getUserName();
   console.log('What number is missing in the progression?');
   for (let i = 0; i < 3; i += 1) {
@@ -33,4 +33,4 @@ const getArithmeticProgression = () => {
   console.log(`Congratulations, ${userName}!`);
 };
 
-export default getArithmeticProgression;
+export default startArithmeticProgression;

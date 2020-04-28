@@ -2,7 +2,7 @@ import readlineSync from 'readline-sync';
 import getUserName from './games';
 import generateRandomNumber from '../utils';
 
-const checkPrimeNumber = () => {
+const startCheckPrimeNumber = () => {
   const userName = getUserName();
   const returnRightAnser = (text) => {
     for (let count = 2; count < text; count += 1) {
@@ -38,4 +38,4 @@ const checkPrimeNumber = () => {
   console.log(`Congratulations, ${userName}!`);
 };
 
-export default checkPrimeNumber;
+export default startCheckPrimeNumber;

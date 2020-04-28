@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import greatestCommonDivisorGame from '../games/gcd';
+import startGreatestCommonDivisorGame from '../games/gcd';
 
-greatestCommonDivisorGame();
+startGreatestCommonDivisorGame();

@@ -2,7 +2,7 @@ import readlineSync from 'readline-sync';
 import getUserName from './games';
 import generateRandomNumber from '../utils';
 
-const greatestCommonDivisorGame = () => {
+const startGreatestCommonDivisorGame = () => {
   const userName = getUserName();
   console.log('Find the greatest common divisor of given numbers.');
   for (let i = 0; i < 3; i += 1) {
@@ -30,4 +30,4 @@ const greatestCommonDivisorGame = () => {
   console.log(`Congratulations, ${userName}!`);
 };
 
-export default greatestCommonDivisorGame;
+export default startGreatestCommonDivisorGame;
