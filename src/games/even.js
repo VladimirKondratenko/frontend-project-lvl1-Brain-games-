@@ -1,11 +1,12 @@
 import readlineSync from 'readline-sync';
 import getUserName from './games';
+import generateRandomNumber from '../utils';
 
 const checkEvenNumber = () => {
   const userName = getUserName();
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
   for (let i = 0; i < 3; i += 1) {
-    const randomNumber = Math.floor(Math.random() * Math.floor(1000));
+    const randomNumber = generateRandomNumber(1000);
     const rightAnswer = randomNumber % 2 === 0 ? 'yes' : 'no';
     console.log(`Question: ${randomNumber}`);
     const answer = readlineSync.question('Your answer: ');

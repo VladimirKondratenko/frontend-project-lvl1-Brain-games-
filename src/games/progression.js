@@ -1,13 +1,14 @@
 import readlineSync from 'readline-sync';
 import getUserName from './games';
+import generateRandomNumber from '../utils';
 
 const getArithmeticProgression = () => {
   const userName = getUserName();
   console.log('What number is missing in the progression?');
   for (let i = 0; i < 3; i += 1) {
-    let startNumberProgression = Math.floor(Math.random() * Math.floor(100));
-    const numberChangeProgression = Math.floor(Math.random() * Math.floor(100));
-    const indexProgression = Math.floor(Math.random() * Math.floor(10));
+    let startNumberProgression = generateRandomNumber(100);
+    const numberChangeProgression = generateRandomNumber(100);
+    const indexProgression = generateRandomNumber(10);
     const resultArithmeticProgression = [];
     let rightAnswer = 0;
 

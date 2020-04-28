@@ -1,12 +1,13 @@
 import readlineSync from 'readline-sync';
 import getUserName from './games';
+import generateRandomNumber from '../utils';
 
 const greatestCommonDivisorGame = () => {
   const userName = getUserName();
   console.log('Find the greatest common divisor of given numbers.');
   for (let i = 0; i < 3; i += 1) {
-    const randomNumberOne = Math.floor(Math.random() * Math.floor(100));
-    const randomNumberTwo = Math.floor(Math.random() * Math.floor(100));
+    const randomNumberOne = generateRandomNumber(100);
+    const randomNumberTwo = generateRandomNumber(100);
     let rightAnswer = 2;
     console.log(`Question: ${randomNumberOne} ${randomNumberTwo}`);
     for (let count = randomNumberOne; count > 0; count -= 1) {

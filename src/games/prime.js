@@ -1,5 +1,6 @@
 import readlineSync from 'readline-sync';
 import getUserName from './games';
+import generateRandomNumber from '../utils';
 
 const checkPrimeNumber = () => {
   const userName = getUserName();
@@ -13,7 +14,7 @@ const checkPrimeNumber = () => {
   };
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
   for (let i = 0; i < 3; i += 1) {
-    const randomNumber = Math.floor(Math.random() * Math.floor(100));
+    const randomNumber = generateRandomNumber(100);
     console.log(`Question: ${randomNumber}`);
     let rightAnswer;
 
