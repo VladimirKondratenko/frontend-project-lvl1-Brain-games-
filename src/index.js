@@ -9,7 +9,7 @@ const engine = (gameName, getQuestion, getRightAnswer) => {
     console.log(`Question: ${gameQuestion.join(' ')}`);
     const gameAnswer = getRightAnswer(gameQuestion);
     const answer = readlineSync.question('Your answer: ');
-    if (String(gameAnswer) === String(answer)) {
+    if (gameAnswer === parseInt(answer, 10)) {
       console.log('Correct!');
     } else {
       console.log(`"${answer}" is wrong answer ;(. Correct answer was "${gameAnswer}".`);

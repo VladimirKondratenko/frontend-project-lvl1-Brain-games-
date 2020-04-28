@@ -1,36 +1,32 @@
-import readlineSync from 'readline-sync';
-import getUserName from './games';
 import generateRandomNumber from '../utils';
+import engine from '../index';
 
 const startArithmeticProgression = () => {
-  const userName = getUserName();
+  const gameName = 'brain-progression';
   console.log('What number is missing in the progression?');
-  for (let i = 0; i < 3; i += 1) {
+  const getQuestion = () => {
     let startNumberProgression = generateRandomNumber(100);
     const numberChangeProgression = generateRandomNumber(100);
     const indexProgression = generateRandomNumber(10);
     const resultArithmeticProgression = [];
     let rightAnswer = 0;
-
     for (let count = 1; count < 10; count += 1) {
       startNumberProgression += numberChangeProgression;
       resultArithmeticProgression.push(startNumberProgression);
     }
-
     rightAnswer = resultArithmeticProgression[indexProgression];
     resultArithmeticProgression[indexProgression] = '..';
+    const gameQuestion = [resultArithmeticProgression, indexProgression];
+    return gameQuestion;
+  };
 
-    console.log(`Question: ${resultArithmeticProgression.join(' ')}`);
-    const answer = readlineSync.question('Your answer: ');
-    if (rightAnswer === parseInt(answer, 10)) {
-      console.log('Correct!');
-    } else {
-      console.log(`"${answer}" is wrong answer ;(. Correct answer was "${rightAnswer}".`);
-      console.log(`Let's try again, ${userName}!`);
-      return;
-    }
-  }
-  console.log(`Congratulations, ${userName}!`);
+  const getRightAnswer = (question) => {
+    let rightAnswer = 0;
+    const [resultArithmeticProgression, indexProgression] = question;
+    rightAnswer = resultArithmeticProgression[indexProgression];
+    return rightAnswer;
+  };
+  engine(gameName, getQuestion, getRightAnswer);
 };
 
 export default startArithmeticProgression;
