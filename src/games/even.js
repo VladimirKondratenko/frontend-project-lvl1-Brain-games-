@@ -1,24 +1,23 @@
-import readlineSync from 'readline-sync';
-import getUserName from './games';
 import generateRandomNumber from '../utils';
+import engine from '../index';
 
 const startCheckEvenNumber = () => {
-  const userName = getUserName();
+  const gameName = 'brain-even';
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
-  for (let i = 0; i < 3; i += 1) {
+
+  const getQuestion = () => {
     const randomNumber = generateRandomNumber(1000);
+    const gameQuestion = [randomNumber];
+    return gameQuestion;
+  };
+
+  const getRightAnswer = (question) => {
+    const [randomNumber] = question;
     const rightAnswer = randomNumber % 2 === 0 ? 'yes' : 'no';
-    console.log(`Question: ${randomNumber}`);
-    const answer = readlineSync.question('Your answer: ');
-    if (rightAnswer === answer) {
-      console.log('Correct!');
-    } else {
-      console.log(`"${answer}" is wrong answer ;(. Correct answer was "${rightAnswer}".`);
-      console.log(`Let's try again, ${userName}!`);
-      return;
-    }
-  }
-  console.log(`Congratulations, ${userName}!`);
+    return rightAnswer;
+  };
+
+  engine(gameName, getQuestion, getRightAnswer);
 };
 
 export default startCheckEvenNumber;
