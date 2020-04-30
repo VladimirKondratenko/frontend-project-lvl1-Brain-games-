@@ -5,19 +5,12 @@ const startCheckEvenNumber = () => {
   const gameName = 'brain-even';
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
-  const getQuestion = () => {
+  const getGameRound = () => {
     const randomNumber = generateRandomNumber(1000);
-    const gameQuestion = [randomNumber];
-    return gameQuestion;
-  };
-
-  const getRightAnswer = (question) => {
-    const [randomNumber] = question;
     const rightAnswer = randomNumber % 2 === 0 ? 'yes' : 'no';
-    return rightAnswer;
+    return [randomNumber, rightAnswer];
   };
-
-  engine(gameName, getQuestion, getRightAnswer);
+  engine(gameName, getGameRound);
 };
 
 export default startCheckEvenNumber;

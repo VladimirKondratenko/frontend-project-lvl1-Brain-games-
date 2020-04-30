@@ -1,13 +1,12 @@
 import readlineSync from 'readline-sync';
 import getUserName from './games/games';
 
-const engine = (gameName, getQuestion, getRightAnswer) => {
+const engine = (gameName, getGameRound) => {
   const userName = getUserName();
   console.log(gameName);
   for (let i = 0; i < 3; i += 1) {
-    const gameQuestion = getQuestion();
+    const [gameQuestion, gameAnswer] = getGameRound();
     console.log(`Question: ${gameQuestion.join(' ')}`);
-    const gameAnswer = getRightAnswer(gameQuestion);
     const answer = readlineSync.question('Your answer: ');
     if (String(gameAnswer) === String(answer)) {
       console.log('Correct!');

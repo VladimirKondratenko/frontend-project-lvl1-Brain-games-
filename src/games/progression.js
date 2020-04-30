@@ -2,8 +2,8 @@ import generateRandomNumber from '../utils';
 import engine from '../index';
 
 const startArithmeticProgression = () => {
-  const gameName = 'brain-progression';
-  console.log('What number is missing in the progression?');
+  //TODO correct;
+  const gameName = 'What number is missing in the progression?';
   let rightAnswer = 0;
   const getQuestion = () => {
     let startNumberProgression = generateRandomNumber(100);
@@ -20,9 +20,7 @@ const startArithmeticProgression = () => {
     return gameQuestion;
   };
 
-  const getRightAnswer = () => {
-    return rightAnswer;
-  };
+  const getRightAnswer = () => rightAnswer;
   engine(gameName, getQuestion, getRightAnswer);
 };
 
