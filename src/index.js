@@ -6,7 +6,7 @@ const engine = (gameName, getGameRound) => {
   console.log(gameName);
   for (let i = 0; i < 3; i += 1) {
     const [gameQuestion, gameAnswer] = getGameRound();
-    console.log(`Question: ${gameQuestion.join(' ')}`);
+    console.log(`Question: ${gameQuestion}`);
     const answer = readlineSync.question('Your answer: ');
     if (String(gameAnswer) === String(answer)) {
       console.log('Correct!');
