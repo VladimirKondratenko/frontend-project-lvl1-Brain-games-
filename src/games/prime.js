@@ -2,23 +2,20 @@ import generateRandomNumber from '../utils';
 import engine from '../index';
 
 const startCheckPrimeNumber = () => {
-  const gameName = 'brain-prime';
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-  const getQuestion = () => {
+  const gameTitle = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+  const getGameRound = () => {
     const randomNumber = generateRandomNumber(100);
-    const gameQuestion = [randomNumber];
-    return gameQuestion;
-  };
-  const getRightAnswer = (question) => {
-    const [randomNumber] = question;
+    let rightAnswer;
     for (let count = 2; count < randomNumber; count += 1) {
       if (randomNumber % count === 0) {
-        return 'no';
+        rightAnswer = 'no';
+        return [randomNumber, rightAnswer];
       }
     }
-    return 'yes';
+    rightAnswer = 'yes';
+    return [randomNumber, rightAnswer];
   };
-  engine(gameName, getQuestion, getRightAnswer);
+  engine(gameTitle, getGameRound);
 };
 
 export default startCheckPrimeNumber;

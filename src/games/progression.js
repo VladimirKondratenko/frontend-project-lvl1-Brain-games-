@@ -2,10 +2,9 @@ import generateRandomNumber from '../utils';
 import engine from '../index';
 
 const startArithmeticProgression = () => {
-  //TODO correct;
-  const gameName = 'What number is missing in the progression?';
+  const gameTitle = 'What number is missing in the progression?';
   let rightAnswer = 0;
-  const getQuestion = () => {
+  const getGameRound = () => {
     let startNumberProgression = generateRandomNumber(100);
     const numberChangeProgression = generateRandomNumber(10);
     const indexProgression = generateRandomNumber(10);
@@ -16,12 +15,9 @@ const startArithmeticProgression = () => {
     }
     rightAnswer = resultArithmeticProgression[indexProgression];
     resultArithmeticProgression[indexProgression] = '..';
-    const gameQuestion = [resultArithmeticProgression];
-    return gameQuestion;
+    return [resultArithmeticProgression, rightAnswer];
   };
-
-  const getRightAnswer = () => rightAnswer;
-  engine(gameName, getQuestion, getRightAnswer);
+  engine(gameTitle, getGameRound);
 };
 
 export default startArithmeticProgression;
