@@ -15,7 +15,7 @@ const startArithmeticProgression = () => {
     }
     rightAnswer = resultArithmeticProgression[indexProgression];
     resultArithmeticProgression[indexProgression] = '..';
-    return [resultArithmeticProgression, rightAnswer];
+    return [resultArithmeticProgression.join(' '), rightAnswer];
   };
   engine(gameTitle, getGameRound);
 };

@@ -9,18 +9,18 @@ const engine = (gameTitle, getGameRound) => {
   };
 
   const userName = getUserName();
+  const numberOfRounds = 3;
   console.log(gameTitle);
-  for (let i = 0; i < 3; i += 1) {
-    const [gameQuestion, gameAnswer] = getGameRound();
+  for (let i = 0; i < numberOfRounds; i += 1) {
+    const [gameQuestion, rightAnswer] = getGameRound();
     console.log(`Question: ${gameQuestion}`);
     const answer = readlineSync.question('Your answer: ');
-    if (String(gameAnswer) === String(answer)) {
-      console.log('Correct!');
-    } else {
-      console.log(`"${answer}" is wrong answer ;(. Correct answer was "${gameAnswer}".`);
+    if (String(rightAnswer) !== String(answer)) {
+      console.log(`"${answer}" is wrong answer ;(. Correct answer was "${rightAnswer}".`);
       console.log(`Let's try again, ${userName}!`);
       return;
     }
+    console.log('Correct!');
   }
   console.log(`Congratulations, ${userName}`);
 };
