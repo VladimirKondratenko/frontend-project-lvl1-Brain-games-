@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import startArithmeticProgression from '../games/progression';
+import startProgression from '../games/progression';
 
-startArithmeticProgression();
+startProgression();

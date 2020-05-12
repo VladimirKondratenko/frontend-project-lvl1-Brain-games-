@@ -4,7 +4,7 @@ import starteEngine from '../index';
 const gameTitle = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const getRoundData = () => {
-  const randomNumber = generateRandomNumber(1, 100);
+  const number = generateRandomNumber(1, 100);
   const checkPrimeNumber = (num) => {
     for (let count = 2; count < num; count += 1) {
       if (num % count === 0) {
@@ -13,8 +13,8 @@ const getRoundData = () => {
     }
     return true;
   };
-  const rightAnswer = checkPrimeNumber(randomNumber) ? 'yes' : 'no';
-  return [randomNumber, rightAnswer];
+  const rightAnswer = checkPrimeNumber(number) ? 'yes' : 'no';
+  return [number, rightAnswer];
 };
 
 const startCheckPrimeNumber = () => {

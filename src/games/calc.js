@@ -2,23 +2,23 @@ import generateRandomNumber from '../utils';
 import starteEngine from '../index';
 
 const gameTitle = 'What is the result of the expression?';
-const symbolsArr = ['+', '-', '*'];
+const symbols = ['+', '-', '*'];
 
 const getRoundData = () => {
-  const randomNumberOne = generateRandomNumber(1, 100);
-  const randomNumberTwo = generateRandomNumber(1, 100);
+  const numberOne = generateRandomNumber(1, 100);
+  const numberTwo = generateRandomNumber(1, 100);
   const symbolIndex = generateRandomNumber(0, 2);
-  const question = [randomNumberOne, symbolsArr[symbolIndex], randomNumberTwo].join(' ');
+  const question = `${numberOne} ${symbols[symbolIndex]} ${numberTwo}`;
   let rightAnswer;
-  switch (symbolsArr[symbolIndex]) {
+  switch (symbols[symbolIndex]) {
     case '+':
-      rightAnswer = randomNumberOne + randomNumberTwo;
+      rightAnswer = numberOne + numberTwo;
       break;
     case '-':
-      rightAnswer = randomNumberOne - randomNumberTwo;
+      rightAnswer = numberOne - numberTwo;
       break;
     case '*':
-      rightAnswer = randomNumberOne * randomNumberTwo;
+      rightAnswer = numberOne * numberTwo;
       break;
     default:
       break;
