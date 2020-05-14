@@ -14,7 +14,7 @@ const calculate = (mathOperator, numberOne, numberTwo) => {
     case '*':
       return numberOne * numberTwo;
     default:
-      throw Error();
+      throw Error(`${mathOperator} not found`);
   }
 };
 
