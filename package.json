@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/VladimirKondratenko/frontend-project-lvl1.git"
+    "url": "git+https://github.com/VladimirKondratenko/frontend-project-lvl1"
   },
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
