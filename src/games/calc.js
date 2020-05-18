@@ -2,28 +2,27 @@ import generateRandomNumber from '../utils';
 import starteEngine from '../index';
 
 const gameTitle = 'What is the result of the expression?';
-const symbols = ['+', '-', '*'];
+const mathOperators = ['+', '-', '*'];
 
-const calculate = (mathOperator, numberOne, numberTwo) => {
-  switch (mathOperator) {
+const calculate = (operator, numberOne, numberTwo) => {
+  switch (operator) {
     case '+':
-      console.log('throw Error();', Error());
       return numberOne + numberTwo;
     case '-':
       return numberOne - numberTwo;
     case '*':
       return numberOne * numberTwo;
     default:
-      throw Error(`${mathOperator} not found`);
+      throw Error(`${operator} not found`);
   }
 };
 
 const getRoundData = () => {
   const numberOne = generateRandomNumber(1, 100);
   const numberTwo = generateRandomNumber(1, 100);
-  const symbolIndex = generateRandomNumber(0, symbols.length - 1);
-  const question = `${numberOne} ${symbols[symbolIndex]} ${numberTwo}`;
-  const rightAnswer = calculate(symbols[symbolIndex], numberOne, numberTwo);
+  const symbolIndex = generateRandomNumber(0, mathOperators.length - 1);
+  const question = `${numberOne} ${mathOperators[symbolIndex]} ${numberTwo}`;
+  const rightAnswer = calculate(mathOperators[symbolIndex], numberOne, numberTwo);
   return [question, String(rightAnswer)];
 };
 

@@ -3,23 +3,29 @@ import starteEngine from '../index';
 
 const gameTitle = 'What number is missing in the progression?';
 
-const getRoundData = () => {
-  let rightAnswer = 0;
-  let startNumberProgression = generateRandomNumber(1, 100);
-  const numberChangeProgression = generateRandomNumber(1, 10);
-  const indexProgression = generateRandomNumber(0, 10);
-  const resultArithmeticProgression = [];
-  for (let count = 1; count <= 10; count += 1) {
-    startNumberProgression += numberChangeProgression;
-    resultArithmeticProgression.push(startNumberProgression);
+const createProgression = (startMember, difference, lengthProgression) => {
+  const resultProgression = [];
+  for (let count = 1; count <= lengthProgression; count += 1) {
+    startMember += difference;
+    resultProgression.push(startMember);
   }
-  rightAnswer = resultArithmeticProgression[indexProgression];
-  resultArithmeticProgression[indexProgression] = '..';
-  return [resultArithmeticProgression.join(' '), String(rightAnswer)];
+  return resultProgression;
 };
 
-const startArithmeticProgression = () => {
+const getRoundData = () => {
+  let rightAnswer = 0;
+  const startMember = generateRandomNumber(1, 100);
+  const difference = generateRandomNumber(1, 10);
+  const lengthProgression = 10;
+  const resultProgression = createProgression(startMember, difference, lengthProgression);
+  const hiddenMemberIndex = generateRandomNumber(0, resultProgression.length - 1);
+  rightAnswer = resultProgression[hiddenMemberIndex];
+  resultProgression[hiddenMemberIndex] = '..';
+  return [resultProgression.join(' '), String(rightAnswer)];
+};
+
+const startProgression = () => {
   starteEngine(gameTitle, getRoundData);
 };
 
-export default startArithmeticProgression;
+export default startProgression;

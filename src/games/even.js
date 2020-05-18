@@ -1,14 +1,14 @@
 import generateRandomNumber from '../utils';
 import starteEngine from '../index';
 
-const checkEven = (number) => (number % 2 === 0);
+const isEven = (number) => (number % 2 === 0);
 
 const gameTitle = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const getRoundData = () => {
-  const number = generateRandomNumber(1, 1000);
-  const rightAnswer = checkEven(number) ? 'yes' : 'no';
-  return [number, rightAnswer];
+  const question = generateRandomNumber(1, 1000);
+  const rightAnswer = isEven(question) ? 'yes' : 'no';
+  return [String(question), rightAnswer];
 };
 
 const startCheckEvenNumber = () => {
