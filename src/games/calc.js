@@ -20,9 +20,9 @@ const calculate = (operator, numberOne, numberTwo) => {
 const getRoundData = () => {
   const numberOne = generateRandomNumber(1, 100);
   const numberTwo = generateRandomNumber(1, 100);
-  const symbolIndex = generateRandomNumber(0, mathOperators.length - 1);
-  const question = `${numberOne} ${mathOperators[symbolIndex]} ${numberTwo}`;
-  const rightAnswer = calculate(mathOperators[symbolIndex], numberOne, numberTwo);
+  const mathOperator = generateRandomNumber(0, mathOperators.length - 1);
+  const question = `${numberOne} ${mathOperators[mathOperator]} ${numberTwo}`;
+  const rightAnswer = calculate(mathOperators[mathOperator], numberOne, numberTwo);
   return [question, String(rightAnswer)];
 };
 
