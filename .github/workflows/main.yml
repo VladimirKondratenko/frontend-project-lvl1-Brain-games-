@@ -6,14 +6,14 @@ jobs:
     steps:
       uses: actions/checkout@v2
       uses: actions/setup-node@v1
+      with:
+        node-version: '12'
     - name: install deps
       run: npm install
     - name: npm run build
       run: npm run build
     - name: run lint
       run: make lint
-      with:
-        node-version: '12'
       run: make install
     - run: make lint
     - run: npm run build
