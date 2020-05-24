@@ -20,16 +20,16 @@ npm link
 - brain-prime
 
 ## Games description
-- **brain-even**
-  : Answer 'yes' if number is even otherwise answer 'no'
-- **brain-calc**
-  : Find the result of the expression
-- **brain-gcd**
-  : Find the greatest common divisor
-- **brain-progression**
-  : Find a missing in given progression
-- **brain-prime**
-  : Answer 'yes' if number is prime otherwise answer 'no'
+- **brain-even**<br/>
+  Answer 'yes' if number is even otherwise answer 'no'
+- **brain-calc**<br/>
+  Find the result of the expression
+- **brain-gcd**<br/>
+  Find the greatest common divisor
+- **brain-progression**<br/>
+  Find a missing in given progression
+- **brain-prime**<br/>
+  Answer 'yes' if number is prime otherwise answer 'no'
 
 ## Preview
 <h3>Brain-even</h3>
