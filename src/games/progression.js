@@ -7,7 +7,7 @@ const lengthProgression = 10;
 
 const createProgression = (startMember, difference, length) => {
   const progression = [];
-  for (let index = 1; index <= length; index += 1) {
+  for (let index = 0; index < length; index += 1) {
     const current = startMember + index * difference;
     progression.push(current);
   }
